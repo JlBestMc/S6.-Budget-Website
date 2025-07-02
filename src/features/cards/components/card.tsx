@@ -1,4 +1,4 @@
-interface CardProps {
+interface CardProps extends products {
   title: string;
   description: string;
   price: string;
