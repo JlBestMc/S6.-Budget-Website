@@ -1,11 +1,6 @@
-interface Products {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-}
+import type { Service } from "../types/services";
 
-export const products: Products[] = [
+export const SERVICES: Service[] = [
   {
     id: 1,
     title: "SEO",
