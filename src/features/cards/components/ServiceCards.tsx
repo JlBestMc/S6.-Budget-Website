@@ -2,12 +2,15 @@ import { SERVICES } from "../data/services";
 import Card from "./Card";
 import type { Service } from "../types/services";
 
-interface ServiceSelectorProps {
+interface ServiceCardsProps {
   selected: number[];
   onToggle: (id: number) => void;
 }
 
-export default function ServiceSelector({ selected, onToggle }: ServiceSelectorProps) {
+export default function ServiceCards({
+  selected,
+  onToggle,
+}: ServiceCardsProps) {
   return (
     <div className="space-y-4">
       {SERVICES.map((service: Service) => (
