@@ -26,44 +26,39 @@ export default function Card({
   return (
     <>
       <div
-        className={`flex justify-between items-center p-10 border-t-2 rounded-xl shadow-lg ${
-          checked ? "border border-green-500" : "border-green-400"
+        className={`flex flex-col p-10 border-t-2 rounded-xl shadow-lg ${
+          checked ? "border border-green-500" : "border-t-yellow-400"
         }`}
       >
-        <div className="flex items-center justify-between gap-5">
+        <div className="flex flex-row justify-between items-center">
           <div className="w-2/5">
             <h3 className="font-bold w-fit text-xl">{title}</h3>
             <p className="text-sm pt-2">{description}</p>
           </div>
           <div>
-            <p className="text-2xl font-bold mt-2 font-roboto">{price} €</p>
+            <p className="text-2xl font-bold font-roboto">{price} €</p>
           </div>
-          <div className="flex s items-center gap-3 pr-5"></div>
-          <Checkbox
-            id={`check-${id}`}
-            checked={checked}
-            onCheckedChange={onToggle}
-          />
-          <label htmlFor={`check-${id}`}></label>
+          <div className="flex items-center gap-3">
+            <Checkbox
+              id={`check-${id}`}
+              checked={checked}
+              onCheckedChange={onToggle}
+            />
+          </div>
         </div>
-        {/* Desplegable card Web service */}
-        <div className="flex items-center justify-between gap-5">
-          <div
-            className={`transition-all bg-amber-200 duration-300 overflow-hidden ${
-              isWebService && checked
-                ? "max-h-96 opacity-100"
-                : "max-h-0 opacity-0"
-            }`}
-          >
-            {isWebService && checked && webOptions && (
-              <WebOptions
-                numPages={webOptions.numPages}
-                numLanguages={webOptions.numLanguages}
-                onChangePages={webOptions.onChangePages}
-                onChangeLanguages={webOptions.onChangeLanguages}
-              />
-            )}
-          </div>
+        <div
+          className={`transition-all duration-300 overflow-hidden ${
+            isWebService && checked ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          {isWebService && checked && webOptions && (
+            <WebOptions
+              numPages={webOptions.numPages}
+              numLanguages={webOptions.numLanguages}
+              onChangePages={webOptions.onChangePages}
+              onChangeLanguages={webOptions.onChangeLanguages}
+            />
+          )}
         </div>
       </div>
     </>
