@@ -12,18 +12,19 @@ export default function WebOptions({
   onChangeLanguages,
 }: WebOptionsProps) {
   return (
-    <div className="mt-4 space-y-4  pt-4">
-      <div className="flex items-center gap-3">
+    <div className="flex justify-end">
+    <div className="mt-4 space-y-4 pt-4">
+      <div className="flex justify-end gap-3">
         <span className="text-sm">📄 Número de pàgines:</span>
         <button
           onClick={() => onChangePages(Math.max(1, numPages - 1))}
-          className="px-2 py-1 border rounded"
+          className="px-2 py-1 border rounded bg-red-500 border-red-950"
         >
           -
         </button>
         <input
           type="number"
-          value={numPages}
+          value={numPages-1}
           readOnly
           className="w-12 text-center border rounded"
         />
@@ -45,7 +46,7 @@ export default function WebOptions({
         </button>
         <input
           type="number"
-          value={numLanguages}
+          value={numLanguages-1}
           readOnly
           className="w-12 text-center border rounded"
         />
@@ -56,6 +57,7 @@ export default function WebOptions({
           +
         </button>
       </div>
+    </div>
     </div>
   );
 }
