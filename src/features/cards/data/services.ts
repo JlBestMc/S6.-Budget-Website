@@ -1,6 +1,6 @@
-import type { Service } from "../types/services";
+import type { ServiceTypes } from "../types/servicesTypes";
 
-export const SERVICES: Service[] = [
+export const SERVICES: ServiceTypes[] = [
   {
     id: 1,
     title: "SEO",

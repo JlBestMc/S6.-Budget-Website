@@ -1,15 +1,28 @@
 import Checkbox from "./Checkbox";
-import type { Service } from "../types/services";
+import type { ServiceTypes } from "../types/servicesTypes";
+import WebOptions from "./WebOptions";
 
 interface CardProps {
-  service: Service;
+  service: ServiceTypes;
   checked: boolean;
   onToggle: () => void;
+  isWebService?: boolean; // true si es la card Web
+  webOptions?: {
+    numPages: number;
+    numLanguages: number;
+    onChangePages: (val: number) => void;
+    onChangeLanguages: (val: number) => void;
+};
 }
 
-export default function Card({ service, checked, onToggle }: CardProps) {
-  const { id, title, description, price } = service;
+export default function Card({ service, checked, onToggle, isWebService, webOptions}: CardProps) {
+const { id, title, description, price } = service;
   return (
+    <div
+      className={`p-6 rounded-xl ${
+        checked ? "border border-green-500" : "bg-white"
+      }`}
+    >
     <div className="flex justify-between items-center p-10 rounded-xl shadow-lg bg-white">
       <div className="w-2/5">
         <h3 className="font-bold w-fit text-xl">{title}</h3>
@@ -24,8 +37,18 @@ export default function Card({ service, checked, onToggle }: CardProps) {
           checked={checked}
           onCheckedChange={onToggle}
         />
-        <label htmlFor={`check-${id}`}>Afegir</label>
+        <label htmlFor={`check-${id}`}></label>
       </div>
+    </div>
+    {/* Desplegable card Web service */}
+      {isWebService && checked && webOptions && (
+        <WebOptions
+          numPages={webOptions.numPages}
+          numLanguages={webOptions.numLanguages}
+          onChangePages={webOptions.onChangePages}
+          onChangeLanguages={webOptions.onChangeLanguages}
+        />
+      )}
     </div>
   );
 }
