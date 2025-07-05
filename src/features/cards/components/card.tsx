@@ -26,14 +26,14 @@ export default function Card({
   return (
     <>
       <div
-        className={`flex flex-col p-10 border-t-2 rounded-xl shadow-lg ${
-          checked ? "border border-green-500" : "border-t-yellow-400"
+        className={`flex flex-col p-10 border-t-4 rounded-xl shadow-lg ${
+          checked ? "border border-green-400" : "border-t-yellow-400"
         }`}
       >
         <div className="flex flex-row justify-between items-center">
           <div className="w-2/5">
             <h3 className="font-bold w-fit text-xl">{title}</h3>
-            <p className="text-sm pt-2">{description}</p>
+            <p className="text-md text-gray-800 font-semibold pt-2">{description}</p>
           </div>
           <div>
             <p className="text-2xl font-bold font-roboto">{price} €</p>
