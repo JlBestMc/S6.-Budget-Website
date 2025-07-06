@@ -28,10 +28,11 @@ export default function WebOptions({
             -
           </button>
           <input
-            type="number"
+            type="text"
             value={numPages - 1}
             readOnly
-            className="w-10 h-8 text-center border rounded border-gray-600"
+            inputMode="numeric"
+            className="w-10 h-8 text-center rounded-lg shadow-sm shadow-gray-500"
           />
           <button
             onClick={() => onChangePages(numPages + 1)}
@@ -54,10 +55,11 @@ export default function WebOptions({
             -
           </button>
           <input
-            type="number"
+            type="text"
             value={numLanguages - 1}
             readOnly
-            className="w-10 h-8 text-center rounded border border-gray-600 "
+            className="w-10 h-8 text-center rounded-lg shadow-sm shadow-gray-500 appearance-none"
+            inputMode="numeric"
           />
           <button
             onClick={() => onChangeLanguages(numLanguages + 1)}

@@ -27,7 +27,7 @@ export default function CalculatorPage() {
       <p className="text-4xl font-semibold text-center">BusinessBoost</p>
     </div>
       <div className="flex items-center justify-center h-64">
-        <div className="w-6xl bg-white rounded-b-lg border-t-8 border-green-400 px-4 py-8 flex flex-col justify-around shadow-md">
+        <div className="w-5xl bg-white rounded-b-lg border-t-8 border-green-400 px-4 py-8 flex flex-col justify-around shadow-md">
           <p className="text-lg font-bold font-sans">
             Aconsegueix la millor qualitat
           </p>
