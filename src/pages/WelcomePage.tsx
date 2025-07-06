@@ -21,7 +21,7 @@ export default function WelcomePage() {
           </div>
         </div>
         <h1 className="text-6xl font-bold text-transparent mt-16 ml-6 bg-clip-text bg-gradient-to-r from-green-900 to-green-500 font-josefin">
-          Benvingut/da a BusinessBost
+          Benvingut/da a BusinessBoost
         </h1>
         <p className="mb-4 ml-6 my-8 text-xl font-josefin mr-10 leading-10 text-gray-700">Gracies per tonar a visitarnos, clica al botó que tens a continuació per poder accedir a la nostra página de serveis y preus.</p>
         <button

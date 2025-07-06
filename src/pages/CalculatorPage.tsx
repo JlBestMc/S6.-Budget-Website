@@ -28,16 +28,18 @@ export default function CalculatorPage() {
           <p className="text-4xl font-bold text-center text-green-900 font-josefin">
             BUSINESSBOOST
           </p>
-          <p className="text-green-900 pl-1 font-josefin">ENHANCE YOUR BUSINESS</p>
+          <p className="text-green-900 pl-1 font-josefin">
+            ENHANCE YOUR BUSINESS
+          </p>
         </div>
       </div>
       <div className="flex items-center justify-center h-64">
         <div className="w-5xl bg-white rounded-b-lg border-t-8 border-green-400 px-4 py-8 flex flex-col justify-around shadow-md">
-          <p className="text-xl font-bold font-josefin">
+          <p className="text-xl font-bold font-montserrat">
             Aconsegueix la millor qualitat
           </p>
           <div className="py-3">
-            <p className="text-gray-400 font-semibold font-josefin text-md">
+            <p className="text-gray-400 font-semibold font-montserrat text-md">
               Tria els serveis que necessites i obtén un pressupost
               personalitzat per el teu projecte.
               <br />
@@ -49,10 +51,10 @@ export default function CalculatorPage() {
           <div className="flex mt-2 justify-between">
             <img className="w-10" src={iconHeader}></img>
             <div className="text-sm flex gap-2">
-              <button className="bg-slate-200 px-2 rounded-xl font-josefin hover:bg-slate-400 transition-colors ease-in-out">
+              <button className="bg-slate-200 px-2 rounded-xl font-montserrat hover:bg-slate-400 transition-colors ease-in-out">
                 qualitat
               </button>
-              <button className="bg-slate-200 px-2 rounded-xl font-josefin hover:bg-slate-400 transition-colors ease-in-out">
+              <button className="bg-slate-200 px-2 rounded-xl font-montserrat hover:bg-slate-400 transition-colors ease-in-out">
                 optimizació
               </button>
             </div>
@@ -71,7 +73,7 @@ export default function CalculatorPage() {
             onChangeLanguages: setNumLanguages,
           }}
         />
-        <div className="text-right font-bold text-xl">
+        <div className="text-right font-montserrat font-bold text-xl">
           Preu pressupostat: {total} €
         </div>
       </div>

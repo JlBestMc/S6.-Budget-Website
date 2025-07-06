@@ -33,10 +33,10 @@ export default function Card({
         <div className="flex flex-row justify-between items-center">
           <div className="w-2/5">
             <h3 className="font-bold w-fit text-xl font-josefin">{title}</h3>
-            <p className="text-md text-gray-800 font-semibold font-josefin pt-2">{description}</p>
+            <p className="text-md text-gray-800 font-semibold font-montserrat pt-2">{description}</p>
           </div>
           <div>
-            <p className="text-3xl font-bold font-josefin">{price} €</p>
+            <p className="text-3xl font-bold font-montserrat">{price} €</p>
           </div>
           <div className="flex items-center gap-3">
             <Checkbox

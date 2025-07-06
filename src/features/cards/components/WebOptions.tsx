@@ -18,7 +18,7 @@ export default function WebOptions({
     <div className="flex justify-end">
       <div className="mt-4 space-y-4 pt-4">
         <div className="flex justify-end items-center h-20 gap-3">
-          <span className="text-sm flex items-center text-gray-800 font-semibold"><img className="w-10 mr-3" src={page}></img> Número de pàgines:</span>
+          <span className="text-sm flex items-center text-gray-800 font-semibold font-montserrat"><img className="w-10 mr-3" src={page}></img> Número de pàgines:</span>
           <button
             onClick={() => onChangePages(Math.max(1, numPages - 1))}
             className="cursor-pointer transition-all bg-red-500 text-white px-3  rounded-lg
@@ -45,7 +45,7 @@ export default function WebOptions({
         </div>
 
         <div className="flex items-center gap-3 h-20">
-          <span className="text-sm flex items-center text-gray-800 font-semibold"><img className="w-10 mr-2" src={idioma}></img> Número de llenguatges:</span>
+          <span className="text-sm flex items-center text-gray-800 font-semibold font-montserrat"><img className="w-10 mr-2" src={idioma}></img> Número de llenguatges:</span>
           <button
             onClick={() => onChangeLanguages(Math.max(1, numLanguages - 1))}
             className="cursor-pointer transition-all bg-red-500 text-white px-3 rounded-lg

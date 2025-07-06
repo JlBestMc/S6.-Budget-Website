@@ -38,7 +38,7 @@ export default function Checkbox({
             </svg>
           </span>
 
-          <span className="ml-3 text-gray-700 group-hover:text-green-500 font-medium transition-colors duration-300">
+          <span className="ml-3 text-gray-700 group-hover:text-green-500 font-josefin font-medium transition-colors duration-300">
             Afegir
           </span>
         </label>
