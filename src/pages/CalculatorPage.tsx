@@ -4,6 +4,10 @@ import { calculateTotal } from "../features/cards/lib/calculateTotal";
 import { useSelectableServices } from "../features/cards/hooks/useSelectableCard";
 import iconHeader from "../assets/iconHeader.svg";
 import boostGreen from "../assets/boost-green.png";
+import BudgetForm from "../features/budgetForm/components/BudgetForm";
+import BudgetList from "../features/budgetForm/components/BudgetList";
+import type { Budget } from "../features/budgetForm/types/budgetTypes";
+import { useState } from "react";
 
 export default function CalculatorPage() {
   const {
@@ -15,10 +19,28 @@ export default function CalculatorPage() {
     setNumLanguages,
   } = useSelectableServices();
 
-  const total = calculateTotal(selected, SERVICES, {
+  const [budgets, setBudgets] = useState<Budget[]>([]);
+  const [form, setForm] = useState({ clientName: "", clientPhone: "", clientEmail: "" });
+
+   const total = calculateTotal(selected, SERVICES, {
     pages: numPages,
     languages: numLanguages,
   });
+
+  const handleAddBudget = () => {
+    const newBudget: Budget = {
+      id: Date.now(),
+      clientName: form.clientName,
+      clientPhone: form.clientPhone,
+      clientEmail: form.clientEmail,
+      selectedServices: selected,
+      total,
+    };
+
+    setBudgets((prev) => [...prev, newBudget]);
+    setForm({ clientName: "", clientPhone: "", clientEmail: "" });
+  };
+
 
   return (
     <>
@@ -76,6 +98,11 @@ export default function CalculatorPage() {
         <div className="text-right font-montserrat font-bold text-xl">
           Preu pressupostat: {total} €
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto p-6 space-y-6">
+        <BudgetForm form={form} setForm={setForm} onSubmit={handleAddBudget} />
+        <hr />
+        <BudgetList budgets={budgets} />
       </div>
     </>
   );
