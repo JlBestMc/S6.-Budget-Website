@@ -16,23 +16,24 @@ interface ServiceCardsProps {
 export default function ServiceCards({
   selected,
   onToggle,
-  webOptions
+  webOptions,
 }: ServiceCardsProps) {
   return (
     <div className="space-y-4">
       {SERVICES.map((service: ServiceTypes) => (
         <Card
-   key={service.id}
-    service={service}
-    checked={selected.includes(service.id)}
-    onToggle={() => onToggle(service.id)}
-    isWebService={service.title.toLowerCase().includes("web")}
-    webOptions={
-      service.title.toLowerCase().includes("web") && selected.includes(service.id)
-        ? webOptions
-        : undefined
-    }
-/>
+          key={service.id}
+          service={service}
+          checked={selected.includes(service.id)}
+          onToggle={() => onToggle(service.id)}
+          isWebService={service.title.toLowerCase().includes("web")}
+          webOptions={
+            service.title.toLowerCase().includes("web") &&
+            selected.includes(service.id)
+              ? webOptions
+              : undefined
+          }
+        />
       ))}
     </div>
   );

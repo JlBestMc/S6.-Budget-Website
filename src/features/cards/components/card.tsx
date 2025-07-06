@@ -26,17 +26,17 @@ export default function Card({
   return (
     <>
       <div
-        className={`flex flex-col p-10 border-t-4 rounded-xl shadow-lg ${
+        className={`flex flex-col p-10 border-t-4 rounded-xl shadow-lg mb-10 ${
           checked ? "border border-green-400" : "border-t-yellow-400"
         }`}
       >
         <div className="flex flex-row justify-between items-center">
           <div className="w-2/5">
-            <h3 className="font-bold w-fit text-xl">{title}</h3>
-            <p className="text-md text-gray-800 font-semibold pt-2">{description}</p>
+            <h3 className="font-bold w-fit text-xl font-josefin">{title}</h3>
+            <p className="text-md text-gray-800 font-semibold font-montserrat pt-2">{description}</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-roboto">{price} €</p>
+            <p className="text-3xl font-bold font-montserrat">{price} €</p>
           </div>
           <div className="flex items-center gap-3">
             <Checkbox
