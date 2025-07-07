@@ -19,7 +19,9 @@ export default function BudgetForm({
 }: BudgetFormProps) {
   return (
     <div className="bg-white pt-8 pb-12 p-5 rounded-xl shadow-xl space-y-4 border-t-8 border-green-600">
-      <h2 className="text-2xl font-bold font-montserrat">Demanar pressupost</h2>
+      <h2 className="text-2xl font-bold mb-10 font-montserrat">
+        Demanar pressupost
+      </h2>
       <div className="flex gap-3">
         <input
           className="border p-2 w-2/4 font-semibold rounded font-montserrat border-gray-400"
@@ -52,7 +54,7 @@ export default function BudgetForm({
         />
         <button
           onClick={onSubmit}
-          className="bg-green-600 text-white px-4 font-semibold  w-2/4 rounded font-montserrat hover:bg-green-700 cursor-pointer transition-all
+          className="bg-green-600 text-white px-4 font-semibold  w-2/4 rounded-md font-montserrat hover:bg-green-700 cursor-pointer transition-all
           border-green-900 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
             active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
         >
