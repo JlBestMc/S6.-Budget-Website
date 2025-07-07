@@ -38,7 +38,7 @@ export default function Card({
             </p>
           </div>
           <div>
-            <p className="text-3xl font-bold font-montserrat">{price} €</p>
+            <p className="text-3xl font-bold font-montserrat">{price}€</p>
           </div>
           <div className="flex items-center gap-3">
             <Checkbox

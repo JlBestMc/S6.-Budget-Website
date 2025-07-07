@@ -52,7 +52,9 @@ export default function BudgetForm({
         />
         <button
           onClick={onSubmit}
-          className="bg-green-600  text-white px-4 font-semibold   w-2/4 rounded font-montserrat hover:bg-green-700"
+          className="bg-green-600 text-white px-4 font-semibold  w-2/4 rounded font-montserrat hover:bg-green-700 cursor-pointer transition-all
+          border-green-900 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+            active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
         >
           Sol·licitar pressupost →
         </button>

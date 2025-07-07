@@ -21,19 +21,19 @@ export default function WebOptions({
     <div className="flex justify-end">
       <div className="mt-4 space-y-4 pt-4">
         <label className="flex items-center justify-end text-sm  flex-en gap-1">
-            <button
-              type="button"
-              onClick={() => setModalOpen(true)}
-              className="text-gray-800 cursor-pointer font-montserrat font-bold hover:text-blue-500"
-            >
-              Informació ℹ️
-            </button>
-          </label>
-          <InfoModal
+          <button
+            type="button"
+            onClick={() => setModalOpen(true)}
+            className="text-gray-800 cursor-pointer font-montserrat font-bold hover:text-blue-500"
+          >
+            Informació ℹ️
+          </button>
+        </label>
+        <InfoModal
           open={modalOpen}
           onClose={() => setModalOpen(false)}
-          title="Número de llenguatges"
-          message="Afegeix els llenguatges que tindrà el teu projecte. El cost de cada llenguatge és de 30€."
+          title="Número de llenguatges y pàgines"
+          message="Afegeix els llenguatges y pàgines que tindrà el teu projecte. El cost de cada llenguatge o pàgina és de 30€."
         />
         <div className="flex justify-end items-center h-20 gap-3">
           <span className="text-sm flex items-center text-gray-800 font-semibold font-montserrat">
@@ -93,7 +93,6 @@ export default function WebOptions({
             +
           </button>
         </div>
-  
       </div>
     </div>
   );
