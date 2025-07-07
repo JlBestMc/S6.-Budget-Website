@@ -4,6 +4,11 @@ import { calculateTotal } from "../features/cards/lib/calculateTotal";
 import { useSelectableServices } from "../features/cards/hooks/useSelectableCard";
 import iconHeader from "../assets/iconHeader.svg";
 import boostGreen from "../assets/boost-green.png";
+import BudgetForm from "../features/budgetForm/components/BudgetForm";
+import BudgetList from "../features/budgetForm/components/BudgetList";
+import type { Budget } from "../features/budgetForm/types/budgetTypes";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CalculatorPage() {
   const {
@@ -15,26 +20,53 @@ export default function CalculatorPage() {
     setNumLanguages,
   } = useSelectableServices();
 
+  const navigate = useNavigate();
+
+  const [budgets, setBudgets] = useState<Budget[]>([]);
+  const [form, setForm] = useState({
+    clientName: "",
+    clientPhone: "",
+    clientEmail: "",
+  });
+
   const total = calculateTotal(selected, SERVICES, {
     pages: numPages,
     languages: numLanguages,
   });
 
+  const handleAddBudget = () => {
+    const newBudget: Budget = {
+      id: Date.now(),
+      clientName: form.clientName,
+      clientPhone: form.clientPhone,
+      clientEmail: form.clientEmail,
+      selectedServices: selected,
+      total,
+      date: new Date(),
+    };
+
+    setBudgets((prev) => [...prev, newBudget]);
+    setForm({ clientName: "", clientPhone: "", clientEmail: "" });
+  };
+
   return (
     <>
-      <div className="flex items-center justify-center m-5">
+
+      <div className="flex items-center justify-center m-5 mb-10 rounded">
+        <div onClick={() => navigate("/welcome")} className="cursor-pointer flex items-center justify-center">
         <img className="w-20 mr-3 filter" src={boostGreen} alt="Logo" />
-        <div>
+        <div >
           <p className="text-4xl font-bold text-center text-green-900 font-josefin">
             BUSINESSBOOST
           </p>
           <p className="text-green-900 pl-1 font-josefin">
             ENHANCE YOUR BUSINESS
           </p>
+          </div>
         </div>
       </div>
-      <div className="flex items-center justify-center h-64">
-        <div className="w-5xl bg-white rounded-b-lg border-t-8 border-green-400 px-4 py-8 flex flex-col justify-around shadow-md">
+      <div className="flex items-center justify-center h-64 ">
+        <div className="w-5xl bg-white rounded-2xl border-t-8 mb-8 border-green-600 px-4 py-8 flex flex-col justify-around shadow-md">
           <p className="text-xl font-bold font-montserrat">
             Aconsegueix la millor qualitat
           </p>
@@ -73,9 +105,14 @@ export default function CalculatorPage() {
             onChangeLanguages: setNumLanguages,
           }}
         />
-        <div className="text-right font-montserrat font-bold text-xl">
+        <div className="text-right font-montserrat font-bold py-8 text-xl">
           Preu pressupostat: {total} €
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto p-6 space-y-6">
+        <BudgetForm form={form} setForm={setForm} onSubmit={handleAddBudget} />
+        <hr className="border-t-4 border-t-gray-300 my-13 border-dotted" />
+        <BudgetList budgets={budgets} />
       </div>
     </>
   );

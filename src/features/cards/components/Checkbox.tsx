@@ -21,7 +21,7 @@ export default function Checkbox({
             onChange={(e) => onCheckedChange(e.target.checked)}
           />
 
-          <span className="relative w-6 h-6 flex justify-center items-center bg-gray-100 border-2 border-gray-400 rounded-md shadow-md transition-all duration-500 peer-checked:border-green-500 peer-checked:bg-green-500 peer-hover:scale-105">
+          <span className="relative w-6 h-6 flex justify-center items-center bg-gray-100 border-2 border-gray-400 rounded-md shadow-md transition-all duration-500 peer-checked:border-green-600 peer-checked:bg-green-600 peer-hover:scale-105">
             <span className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 opacity-0 peer-checked:opacity-100 rounded-md transition-all duration-500 peer-checked:animate-pulse"></span>
 
             <svg
@@ -38,7 +38,7 @@ export default function Checkbox({
             </svg>
           </span>
 
-          <span className="ml-3 text-gray-700 group-hover:text-green-500 font-josefin font-medium transition-colors duration-300">
+          <span className="ml-3 text-gray-700 group-hover:text-green-600 font-josefin font-medium transition-colors duration-300">
             Afegir
           </span>
         </label>
