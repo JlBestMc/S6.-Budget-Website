@@ -20,9 +20,13 @@ export default function CalculatorPage() {
   } = useSelectableServices();
 
   const [budgets, setBudgets] = useState<Budget[]>([]);
-  const [form, setForm] = useState({ clientName: "", clientPhone: "", clientEmail: "" });
+  const [form, setForm] = useState({
+    clientName: "",
+    clientPhone: "",
+    clientEmail: "",
+  });
 
-   const total = calculateTotal(selected, SERVICES, {
+  const total = calculateTotal(selected, SERVICES, {
     pages: numPages,
     languages: numLanguages,
   });
@@ -41,10 +45,9 @@ export default function CalculatorPage() {
     setForm({ clientName: "", clientPhone: "", clientEmail: "" });
   };
 
-
   return (
     <>
-      <div className="flex items-center justify-center m-5">
+      <div className="flex items-center  justify-center m-5 mb-10 rounded">
         <img className="w-20 mr-3 filter" src={boostGreen} alt="Logo" />
         <div>
           <p className="text-4xl font-bold text-center text-green-900 font-josefin">
@@ -55,8 +58,8 @@ export default function CalculatorPage() {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center h-64">
-        <div className="w-5xl bg-white rounded-b-lg border-t-8 border-green-400 px-4 py-8 flex flex-col justify-around shadow-md">
+      <div className="flex items-center justify-center h-64 ">
+        <div className="w-5xl bg-white rounded-2xl border-t-8 mb-8 border-green-600 px-4 py-8 flex flex-col justify-around shadow-md">
           <p className="text-xl font-bold font-montserrat">
             Aconsegueix la millor qualitat
           </p>
@@ -95,13 +98,13 @@ export default function CalculatorPage() {
             onChangeLanguages: setNumLanguages,
           }}
         />
-        <div className="text-right font-montserrat font-bold text-xl">
+        <div className="text-right font-montserrat font-bold py-8 text-xl">
           Preu pressupostat: {total} €
         </div>
       </div>
       <div className="max-w-5xl mx-auto p-6 space-y-6">
         <BudgetForm form={form} setForm={setForm} onSubmit={handleAddBudget} />
-        <hr />
+        <hr className="border-t-4 border-t-gray-300 my-13 border-dotted" />
         <BudgetList budgets={budgets} />
       </div>
     </>
