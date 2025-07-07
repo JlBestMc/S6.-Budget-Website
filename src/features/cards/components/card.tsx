@@ -27,7 +27,7 @@ export default function Card({
     <>
       <div
         className={`flex flex-col p-10 border-t-4 rounded-xl shadow-lg mb-10 ${
-          checked ? "border border-green-400" : "border-t-yellow-400"
+          checked ? "border border-green-600" : "border-t-yellow-400"
         }`}
       >
         <div className="flex flex-col gap-10 md:gap-0 md:flex-row justify-between items-center">
