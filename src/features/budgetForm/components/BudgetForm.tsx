@@ -24,7 +24,7 @@ export default function BudgetForm({
       </h2>
       <div className="flex gap-3">
         <input
-          className="border p-2 w-2/4 font-semibold rounded font-montserrat border-gray-400"
+          className=" w-2/4 font-semibold  rounded-xl font-montserrat px-3 py-2 border-2 border-transparent focus:outline-none focus:border-green-600 placeholder-gray-400 transition-all duration-300 shadow-sm shadow-gray-500"
           type="text"
           placeholder="Nom del client/a"
           value={form.clientName}
@@ -33,7 +33,7 @@ export default function BudgetForm({
           }
         />
         <input
-          className="border font-semibold  p-2 w-2/4 border-gray-400 font-montserrat  rounded"
+          className=" w-2/4 font-semibold rounded-xl font-montserrat px-3 py-2 border-2 border-transparent focus:outline-none focus:border-green-600 placeholder-gray-400 transition-all duration-300 shadow-sm shadow-gray-500"
           type="tel"
           pattern="[0-9]*"
           inputMode="numeric"
@@ -44,7 +44,7 @@ export default function BudgetForm({
           }
         />
         <input
-          className="border p-2 w-2/4 font-semibold  rounded font-montserrat border-gray-400"
+          className=" w-2/4 font-semibold rounded-xl font-montserrat px-3 py-2 border-2 border-transparent focus:outline-none focus:border-green-600 placeholder-gray-400 transition-all duration-300 shadow-sm shadow-gray-500"
           type="text"
           placeholder="Email del client/a"
           value={form.clientEmail}

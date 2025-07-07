@@ -8,6 +8,7 @@ import BudgetForm from "../features/budgetForm/components/BudgetForm";
 import BudgetList from "../features/budgetForm/components/BudgetList";
 import type { Budget } from "../features/budgetForm/types/budgetTypes";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CalculatorPage() {
   const {
@@ -18,6 +19,8 @@ export default function CalculatorPage() {
     setNumPages,
     setNumLanguages,
   } = useSelectableServices();
+
+  const navigate = useNavigate();
 
   const [budgets, setBudgets] = useState<Budget[]>([]);
   const [form, setForm] = useState({
@@ -48,15 +51,18 @@ export default function CalculatorPage() {
 
   return (
     <>
-      <div className="flex items-center  justify-center m-5 mb-10 rounded">
+
+      <div className="flex items-center justify-center m-5 mb-10 rounded">
+        <div onClick={() => navigate("/welcome")} className="cursor-pointer flex items-center justify-center">
         <img className="w-20 mr-3 filter" src={boostGreen} alt="Logo" />
-        <div>
+        <div >
           <p className="text-4xl font-bold text-center text-green-900 font-josefin">
             BUSINESSBOOST
           </p>
           <p className="text-green-900 pl-1 font-josefin">
             ENHANCE YOUR BUSINESS
           </p>
+          </div>
         </div>
       </div>
       <div className="flex items-center justify-center h-64 ">

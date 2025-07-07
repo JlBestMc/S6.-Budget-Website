@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WelcomePage/>} />
         <Route path="/calculator" element={<CalculatorPage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
       </Routes>
     </BrowserRouter>
     </>
