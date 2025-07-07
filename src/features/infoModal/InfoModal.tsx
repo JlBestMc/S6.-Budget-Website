@@ -1,5 +1,3 @@
-import React from "react";
-
 interface InfoModalProps {
   open: boolean;
   onClose: () => void;
@@ -7,7 +5,12 @@ interface InfoModalProps {
   message: string;
 }
 
-const InfoModal: React.FC<InfoModalProps> = ({ open, onClose, title, message }) => {
+export default function InfoModal({
+  open,
+  onClose,
+  title,
+  message,
+}: InfoModalProps) {
   if (!open) return null;
 
   return (
@@ -24,6 +27,4 @@ const InfoModal: React.FC<InfoModalProps> = ({ open, onClose, title, message }) 
       </div>
     </div>
   );
-};
-
-export default InfoModal;
+}
