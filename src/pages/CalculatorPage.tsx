@@ -39,6 +39,7 @@ export default function CalculatorPage() {
       clientEmail: form.clientEmail,
       selectedServices: selected,
       total,
+      date: new Date(),
     };
 
     setBudgets((prev) => [...prev, newBudget]);

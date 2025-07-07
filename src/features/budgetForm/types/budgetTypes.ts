@@ -5,4 +5,5 @@ export interface Budget {
   clientEmail: string;
   selectedServices: number[];
   total: number;
+  date:Date;
 }
